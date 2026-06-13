@@ -1,0 +1,508 @@
+/* ==========================================================================
+   1. RESET, DESIGN TOKENS & BASE STYLES
+   ========================================================================== */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9f9f9;
+    --text-main: #111111;
+    --text-muted: #666666;
+    --accent: #000000;
+    --placeholder-color: #e5e5e5;
+    --font-sans: 'Inter', sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --header-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-top: var(--header-height); /* Prevents fixed header overlap */
+}
+
+/* Global Buttons & Links */
+.btn {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.btn-link:hover {
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   2. STICKY HEADER
+   ========================================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #f0f0f0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-placeholder {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border: 2px solid var(--accent);
+    padding: 0.4rem 0.8rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 400;
+    margin: 0 1.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--text-muted);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.phone-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn-header {
+    padding: 0.6rem 1.4rem;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (Digital Showroom Landing)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: calc(85vh - var(--header-height));
+    min-height: 500px;
+    background-color: #111111; /* Fallback dark tone */
+    /* Once you have a hero image background, reference it here: */
+    /* background-image: url('hero-bg.jpg'); */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    color: #ddd;
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   4. ALTERNATING SHOWROOM ROWS
+   ========================================================================== */
+.services-showroom {
+    padding: 0;
+}
+
+.showroom-row {
+    display: flex;
+    flex-direction: row;
+    min-height: 50vh;
+}
+
+.showroom-image, .showroom-text {
+    flex: 1;
+    width: 50%;
+}
+
+.showroom-image {
+    background-color: var(--placeholder-color);
+}
+
+.image-box-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #eaeaea;
+}
+
+.showroom-text {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-primary);
+}
+
+.showroom-row.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.showroom-row.row-reverse .showroom-text {
+    background-color: var(--bg-secondary);
+}
+
+.showroom-text h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.showroom-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 500px;
+}
+
+/* ==========================================================================
+   5. FEATURED PORTFOLIO GRID
+   ========================================================================== */
+.featured-projects {
+    padding: 8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.section-title p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    background: var(--bg-primary);
+    transition: var(--transition-smooth);
+}
+
+.project-img-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: var(--placeholder-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.project-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   6. TESTIMONIALS SECTION
+   ========================================================================== */
+.testimonials-section {
+    background-color: var(--bg-secondary);
+    padding: 8rem 2rem;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.testimonial-card .quote {
+    font-size: 1.15rem;
+    color: var(--text-main);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.testimonial-card .client-name {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   7. DUAL-PURPOSE FOOTER
+   ========================================================================== */
+.main-footer {
+    background-color: #050505;
+    color: #ffffff;
+    padding: 6rem 2rem 2rem 2rem;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    flex-wrap: wrap;
+}
+
+.footer-form {
+    flex: 1.5;
+    min-width: 350px;
+}
+
+.footer-form h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.footer-form p {
+    color: #999;
+    margin-bottom: 2rem;
+}
+
+.footer-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-form input, .footer-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: #111;
+    border: 1px solid #222;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.footer-form input:focus, .footer-form textarea:focus {
+    outline: none;
+    border-color: #555;
+    background-color: #151515;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.footer-info h3 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 0.5rem;
+}
+
+.footer-info address {
+    font-style: normal;
+    color: #aaa;
+}
+
+.footer-info address p {
+    margin-bottom: 0.8rem;
+}
+
+.brand-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.footer-info address a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hours {
+    margin-top: 2rem;
+    color: #aaa;
+}
+
+.hours p {
+    margin-bottom: 0.4rem;
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 4rem auto 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid #111;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 968px) {
+    .showroom-row, .showroom-row.row-reverse {
+        flex-direction: column;
+    }
+    .showroom-image, .showroom-text {
+        width: 100%;
+    }
+    .showroom-text {
+        padding: 4rem 2rem;
+    }
+    .nav-links {
+        display: none; /* Can be hooked into a burger menu later */
+    }
+    .footer-container {
+        gap: 3rem;
+    }
+}
