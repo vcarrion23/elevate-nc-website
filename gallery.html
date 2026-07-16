@@ -38,8 +38,8 @@
         </div>
 
         <!-- PROJECT 1: SHOWER TILING -->
-        <section id="tile" class="split-showcase-block" style="margin-bottom: 120px;">
-            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">1. Custom Tile & Shower Upgrade</h2>
+        <section id="project-tile-shower" class="split-showcase-block" style="margin-bottom: 120px;">
+            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">Custom Tile & Shower Upgrade</h2>
             <div class="split-grid-wrapper">
                 <div class="split-pane">
                     <img src="pictures/bathroomtilingbefore.png" alt="Shower tile before renovation">
@@ -53,8 +53,8 @@
         </section>
 
         <!-- PROJECT 2: COMPACT BATHROOM -->
-        <section id="small-bath" class="split-showcase-block" style="margin-bottom: 120px;">
-            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">2. Compact Bathroom Layout Renovation</h2>
+        <section id="project-compact-bath" class="split-showcase-block" style="margin-bottom: 120px;">
+            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">Compact Bathroom Layout Renovation</h2>
             <div class="split-grid-wrapper">
                 <div class="split-pane">
                     <img src="pictures/smallbathroombefore.png" alt="Small bathroom before renovation">
@@ -68,8 +68,8 @@
         </section>
 
         <!-- PROJECT 3: LUXURY BALCONY -->
-        <section id="balcony" class="split-showcase-block" style="margin-bottom: 60px;">
-            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">3. Premium Balcony Structural Upgrades</h2>
+        <section id="project-balcony-upgrade" class="split-showcase-block" style="margin-bottom: 60px;">
+            <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">Premium Balcony Structural Upgrades</h2>
             <div class="split-grid-wrapper">
                 <div class="split-pane">
                     <img src="pictures/balconybefore.png" alt="Balcony deck before remodeling">
@@ -90,6 +90,37 @@
         <p style="color: #858b96; margin-bottom: 30px;">Let's get your project on the schedule.</p>
         <a href="index.html#contact" class="btn btn-primary">Get Your Free Estimate</a>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const target = document.querySelector(hash);
+                if (target) {
+                    const offset = 110;
+                    const bounds = target.getBoundingClientRect();
+                    window.scrollTo({ top: window.scrollY + bounds.top - offset, behavior: 'smooth' });
+                }
+            }
+
+            document.querySelectorAll('.before-after-slider').forEach(slider => {
+                const range = slider.querySelector('input[type="range"]');
+                const after = slider.querySelector('.after-image');
+                const handle = slider.querySelector('.slider-handle');
+                const value = slider.querySelector('.slider-value');
+
+                const update = () => {
+                    const percent = range.value;
+                    after.style.width = percent + '%';
+                    handle.style.left = percent + '%';
+                    value.textContent = percent + '%';
+                };
+
+                range.addEventListener('input', update);
+                update();
+            });
+        });
+    </script>
 
 </body>
 </html>
