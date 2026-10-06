@@ -185,6 +185,42 @@ a {
     gap: 15px;
 }
 
+/* --- TRUST STRIP --- */
+.trust-strip {
+    max-width: 1200px;
+    margin: -30px auto 0;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.trust-item {
+    background: rgba(11, 12, 14, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 24px 18px;
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.trust-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #6e7682;
+    margin-bottom: 10px;
+}
+
+.trust-item strong {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
 /* --- ABOUT US SECTION --- */
 .about-section {
     padding: 120px 20px;
@@ -660,6 +696,44 @@ a {
     font-size: 0.8rem;
 }
 
+/* --- ESTIMATE CTA --- */
+.estimate-section {
+    padding: 20px 20px 120px;
+}
+
+.estimate-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 44px 38px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.estimate-copy h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.estimate-copy p {
+    color: #8e95a1;
+    max-width: 680px;
+}
+
+.estimate-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 /* --- FOOTER & FORMS --- */
 .main-footer {
     padding: 100px 20px 40px 20px;
@@ -759,10 +833,17 @@ a {
 /* --- MOBILE RESPONSIVE ENGINE --- */
 @media (max-width: 768px) {
     .header-container { flex-direction: column; gap: 20px; text-align: center; }
+    .trust-strip { grid-template-columns: 1fr 1fr; }
     .about-container, .showroom-row, .testimonials-container, .footer-container { grid-template-columns: 1fr; gap: 50px; }
     .split-grid-wrapper { grid-template-columns: 1fr; gap: 15px; }
     .split-pane img { height: 300px; }
     .row-reverse { direction: ltr; }
     .hero-content h1 { font-size: 2.3rem; }
     .showroom-image img { height: 320px; }
+    .estimate-wrap { flex-direction: column; align-items: flex-start; }
+    .estimate-actions { justify-content: flex-start; }
+}
+
+@media (max-width: 500px) {
+    .trust-strip { grid-template-columns: 1fr; }
 }
