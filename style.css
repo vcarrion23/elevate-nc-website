@@ -1468,7 +1468,10 @@ body {
 
     .hero-section {
         min-height: 580px;
-        height: 72svh;
+        min-height: 100vh;
+        min-height: 100svh;
+        height: 100vh;
+        height: 100svh;
     }
 
     .about-container {
@@ -1691,8 +1694,10 @@ body {
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 620px;
-    height: min(78svh, 800px);
+    min-height: 100vh;
+    min-height: 100svh;
+    height: 100vh;
+    height: 100svh;
     margin: 0;
     padding: 70px clamp(28px, 8vw, 128px);
     display: flex;
@@ -1705,11 +1710,7 @@ body {
 }
 
 .hero-section::before {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(90deg, #111214 0%, #111214 36%, rgba(17, 18, 20, 0.78) 49%, rgba(17, 18, 20, 0.12) 68%, transparent 82%);
-    content: "";
+    display: none;
 }
 
 .hero-overlay {
@@ -1763,10 +1764,25 @@ body {
 
 .hero-image {
     position: absolute;
-    inset: 0 0 0 46%;
+    inset: 0;
     z-index: 0;
     overflow: hidden;
     background: #111214;
+}
+
+.hero-image::after {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(17, 18, 20, 0.82), rgba(17, 18, 20, 0.58) 42%, rgba(17, 18, 20, 0.12) 78%);
+    content: "";
+    pointer-events: none;
+}
+
+.hero-image picture {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .hero-image img {
@@ -1776,6 +1792,78 @@ body {
     object-fit: cover;
     object-position: center 50%;
     animation: hero-image-drift 36s ease-in-out infinite alternate;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 900ms ease, visibility 900ms ease;
+}
+
+.hero-photo {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-photo-label {
+    position: absolute;
+    top: clamp(14px, 2vw, 28px);
+    left: clamp(14px, 2vw, 28px);
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(17, 18, 20, 0.76);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    backdrop-filter: blur(8px);
+}
+
+.hero-slide.is-active {
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero-brand {
+    position: absolute;
+    z-index: 3;
+    bottom: 28px;
+    display: flex;
+    align-items: center;
+    background: rgba(17, 18, 20, 0.78);
+    color: #fff;
+    backdrop-filter: blur(8px);
+}
+
+.hero-brand {
+    right: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 12px 16px;
+    border-left: 2px solid var(--copper);
+}
+
+.hero-brand-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-brand-caption {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.58rem;
+    letter-spacing: 1.4px;
 }
 
 @keyframes hero-image-drift {
@@ -1791,6 +1879,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .hero-image img {
         animation: none;
+    }
+
+    .hero-slide {
+        transition: none;
     }
 }
 
@@ -1973,17 +2065,36 @@ body {
     }
 
     .hero-section {
-        min-height: 620px;
-        height: 82svh;
+        min-height: 100vh;
+        min-height: 100svh;
+        height: 100vh;
+        height: 100svh;
         padding: 54px 22px;
-    }
-
-    .hero-section::before {
-        background: linear-gradient(90deg, rgba(17, 18, 20, 0.88), rgba(17, 18, 20, 0.55) 70%, rgba(17, 18, 20, 0.35));
     }
 
     .hero-image {
         inset: 0;
+    }
+
+    .hero-image img {
+        object-position: center 45%;
+    }
+
+    .hero-slide {
+        gap: 2px;
+    }
+
+    .hero-brand {
+        bottom: 18px;
+    }
+
+    .hero-brand {
+        right: 14px;
+        padding: 9px 10px;
+    }
+
+    .hero-brand-caption {
+        font-size: 0.5rem;
     }
 
     .hero-content h1 {

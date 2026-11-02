@@ -43,8 +43,41 @@
                     <a href="#contact" class="btn btn-primary">Request an Estimate</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="pictures/bathroomafter.png" alt="Completed bathroom remodel with a tiled shower by Elevate NC">
+            <div class="hero-image" role="region" aria-label="Featured Elevate NC project photos">
+                <div class="hero-slide is-active" role="group" aria-label="Custom tile and shower upgrade, before and after" aria-hidden="false">
+                    <figure class="hero-photo">
+                        <img src="pictures/bathroomtilingbefore.png" alt="Shower tile before renovation">
+                        <figcaption class="hero-photo-label">BEFORE</figcaption>
+                    </figure>
+                    <figure class="hero-photo">
+                        <img src="pictures/bathroomtileafter.png" alt="Shower tile after premium remodel">
+                        <figcaption class="hero-photo-label">AFTER</figcaption>
+                    </figure>
+                </div>
+                <div class="hero-slide" role="group" aria-label="Compact bathroom renovation, before and after" aria-hidden="true">
+                    <figure class="hero-photo">
+                        <img src="pictures/smallbathroombefore.png" alt="Compact bathroom before renovation">
+                        <figcaption class="hero-photo-label">BEFORE</figcaption>
+                    </figure>
+                    <figure class="hero-photo">
+                        <img src="pictures/smallbathroomafter.png" alt="Compact bathroom after renovation">
+                        <figcaption class="hero-photo-label">AFTER</figcaption>
+                    </figure>
+                </div>
+                <div class="hero-slide" role="group" aria-label="Balcony renovation, before and after" aria-hidden="true">
+                    <figure class="hero-photo">
+                        <img src="pictures/balconybefore.png" alt="Balcony deck before remodeling">
+                        <figcaption class="hero-photo-label">BEFORE</figcaption>
+                    </figure>
+                    <figure class="hero-photo">
+                        <img src="pictures/balconyafter1.png" alt="Balcony deck after luxury floor tiling">
+                        <figcaption class="hero-photo-label">AFTER</figcaption>
+                    </figure>
+                </div>
+                <div class="hero-brand" aria-label="Elevate NC Construction">
+                    <span class="hero-brand-name">ELEVATE NC</span>
+                    <span class="hero-brand-caption">CONSTRUCTION · CHARLOTTE, NC</span>
+                </div>
             </div>
         </section>
 
@@ -252,6 +285,35 @@
             });
             
             revealElements.forEach(el => observer.observe(el));
+
+            const slideshow = document.querySelector('.hero-image');
+            if (!slideshow) return;
+
+            const slides = Array.from(slideshow.querySelectorAll('.hero-slide'));
+            let activeIndex = 0;
+            let slideshowTimer;
+
+            const showSlide = (index) => {
+                slides[activeIndex].classList.remove('is-active');
+                slides[activeIndex].setAttribute('aria-hidden', 'true');
+                activeIndex = (index + slides.length) % slides.length;
+                slides[activeIndex].classList.add('is-active');
+                slides[activeIndex].setAttribute('aria-hidden', 'false');
+            };
+
+            const stopSlideshow = () => {
+                window.clearInterval(slideshowTimer);
+                slideshowTimer = undefined;
+            };
+
+            const startSlideshow = () => {
+                stopSlideshow();
+                if (document.hidden) return;
+                slideshowTimer = window.setInterval(() => showSlide(activeIndex + 1), 6000);
+            };
+
+            document.addEventListener('visibilitychange', startSlideshow);
+            startSlideshow();
         });
     </script>
 
