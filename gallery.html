@@ -6,7 +6,7 @@
     <title>Before & After Showcase | Elevate NC Construction</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,28 +17,30 @@
             <div class="logo">
                 <a href="index.html" class="logo-placeholder">ELEVATE NC</a>
             </div>
-            <nav class="nav-links">
-                <a href="index.html#about">About Us</a>
-                <a href="index.html#services">Services</a>
-                <a href="index.html#testimonials">Reviews</a>
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html" aria-current="page">Gallery</a>
+                <a href="about.html">About</a>
                 <a href="index.html#contact">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="index.html" class="btn btn-secondary btn-header">← Back To Home</a>
+                <a href="tel:9176806435" class="phone-link">(917) 680-6435</a>
+                <a href="index.html#contact" class="btn btn-primary btn-header">Request Estimate</a>
             </div>
         </div>
     </header>
 
-    <main style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+    <main class="gallery-page">
         
-        <div style="text-align: center; margin-bottom: 80px;">
+        <div class="gallery-heading">
             <span class="section-subtitle">The Proof is in the Process</span>
-            <h1 style="font-size: 3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Transformations Showcase</h1>
-            <p style="color: #858b96; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">A side-by-side look at how we take outdated or damaged surfaces and elevate them into modern, high-precision environments.</p>
+            <h1>Transformations, made to last.</h1>
+            <p>A closer look at the details, materials, and craftsmanship behind recent Elevate NC projects.</p>
         </div>
 
         <!-- PROJECT 1: SHOWER TILING -->
-        <section id="project-tile-shower" class="split-showcase-block" style="margin-bottom: 120px;">
+        <section id="project-tile-shower" class="split-showcase-block">
             <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">Custom Tile & Shower Upgrade</h2>
             <div class="split-grid-wrapper">
                 <div class="split-pane">
@@ -53,7 +55,7 @@
         </section>
 
         <!-- PROJECT 2: COMPACT BATHROOM -->
-        <section id="project-compact-bath" class="split-showcase-block" style="margin-bottom: 120px;">
+        <section id="project-compact-bath" class="split-showcase-block">
             <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">Compact Bathroom Layout Renovation</h2>
             <div class="split-grid-wrapper">
                 <div class="split-pane">
@@ -68,7 +70,7 @@
         </section>
 
         <!-- PROJECT 3: LUXURY BALCONY -->
-        <section id="project-balcony-upgrade" class="split-showcase-block" style="margin-bottom: 60px;">
+        <section id="project-balcony-upgrade" class="split-showcase-block">
             <h2 style="font-size: 1.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 0.5px;">Premium Balcony Structural Upgrades</h2>
             <div class="split-grid-wrapper">
                 <div class="split-pane">
@@ -85,7 +87,7 @@
     </main>
 
     <!-- SIMPLE FLOATING FOOTER CALL TO ACTION -->
-    <section style="background-color: #0b0c0e; border-top: 1px solid rgba(255, 255, 255, 0.03); padding: 60px 20px; text-align: center;">
+    <section class="gallery-cta">
         <h2 style="font-size: 1.8rem; text-transform: uppercase; margin-bottom: 15px;">Want Similar Results For Your Home?</h2>
         <p style="color: #858b96; margin-bottom: 30px;">Let's get your project on the schedule.</p>
         <a href="index.html#contact" class="btn btn-primary">Get Your Free Estimate</a>
