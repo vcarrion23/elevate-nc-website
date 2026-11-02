@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elevate NC Construction | Premium Remodeling & Repairs</title>
-    <!-- Modern Sans-Serif Font Setup -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,18 +15,18 @@
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
-                <div class="logo-placeholder">ELEVATE NC</div>
+                <a href="index.html" class="logo-placeholder">ELEVATE NC</a>
             </div>
             <nav class="nav-links">
-                <a href="#about">About Us</a>
-                <a href="#services">Services</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#testimonials">Reviews</a>
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About</a>
                 <a href="#contact">Contact</a>
             </nav>
             <div class="header-actions">
                 <a href="tel:9176806435" class="phone-link">(917) 680-6435</a>
-                <a href="#" target="_blank" class="btn btn-primary btn-header">Book via Jobber</a>
+                <a href="#contact" class="btn btn-primary btn-header">Request Estimate</a>
             </div>
         </div>
     </header>
@@ -35,14 +34,17 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero-section">
-            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1>Expert Home Remodeling & Professional Repairs.</h1>
-                <p>From luxury bathroom upgrades to seamless drywall, flooring, and property improvements across Charlotte.</p>
+                <span class="hero-eyebrow">Charlotte, North Carolina · Home renovations & repairs</span>
+                <h1>A better finish for the place you call home.</h1>
+                <p>From bathroom renovations to the details that make a home work better, Elevate NC brings thoughtful craftsmanship to every project.</p>
                 <div class="hero-cta">
                     <a href="#gallery" class="btn btn-secondary">View Our Work</a>
                     <a href="#contact" class="btn btn-primary">Request an Estimate</a>
                 </div>
+            </div>
+            <div class="hero-image">
+                <img src="pictures/bathroomafter.png" alt="Completed bathroom remodel with a tiled shower by Elevate NC">
             </div>
         </section>
 
@@ -201,15 +203,15 @@
     <footer id="contact" class="main-footer">
         <div class="footer-container scroll-reveal">
             <div class="footer-form">
-                <h3>Direct Inquiry</h3>
-                <p>Have questions before booking? Drop us a line below.</p>
-                <form action="#" method="POST" onsubmit="event.preventDefault();">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="tel" placeholder="Phone Number">
-                    <textarea placeholder="Tell us about your project..." rows="4" required></textarea>
-                    <button type="submit" class="btn btn-primary">Submit Inquiry</button>
-                </form>
+                <h3>Request an Estimate</h3>
+                <p>Tell us about your project using our secure booking form.</p>
+                <script async src="https://online-booking.housecallpro.com/script.js?token=1c6ae6230fee413f824c8d51f15c439c&amp;orgName=Elevate-NC-Construction-LLC"></script>
+                <iframe
+                    id="hcp-lead-iframe"
+                    title="Elevate NC Construction estimate request form"
+                    src="https://book.housecallpro.com/lead-form/Elevate-NC-Construction-LLC/1c6ae6230fee413f824c8d51f15c439c"
+                    style="border: none;"
+                ></iframe>
             </div>
             
             <div class="footer-info">
