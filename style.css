@@ -2154,3 +2154,135 @@ body {
         font-size: 2.65rem;
     }
 }
+
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        flex: 1 0 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .hero-section {
+        min-height: 0;
+        height: auto;
+        padding: 48px 22px 24px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .hero-content {
+        max-width: 680px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 7vw, 3.1rem);
+    }
+
+    .hero-image {
+        position: relative;
+        inset: auto;
+        z-index: 0;
+        width: 100%;
+        height: clamp(260px, 54svh, 420px);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .header-container {
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .header-actions {
+        margin: 0;
+    }
+
+    .btn-header {
+        min-height: 44px;
+        padding: 9px 10px;
+        font-size: 0.62rem;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+        gap: 0 4px;
+    }
+
+    .nav-links a {
+        padding: 7px 8px;
+        font-size: 0.76rem;
+    }
+
+    .hero-section {
+        padding: 38px 18px 20px;
+        gap: 24px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.2rem, 10vw, 2.65rem);
+    }
+
+    .hero-eyebrow {
+        max-width: 34ch;
+        line-height: 1.5;
+    }
+
+    .hero-image {
+        height: clamp(240px, 58svh, 360px);
+    }
+
+    .hero-brand {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .trust-strip {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .about-section,
+    .featured-projects,
+    .testimonials-section {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .showroom-row {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .testimonial-card {
+        padding: 24px 20px;
+    }
+
+    .main-footer {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .footer-container {
+        gap: 42px;
+    }
+
+    .estimate-wrap {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+}
